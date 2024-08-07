@@ -1,0 +1,14 @@
+C:\Users\Aluno Noite\Documents\CursoC#\CursoCSharpBackup\obj\Debug\net8.0\CursoCSharpBackup.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aluno Noite\Documents\CursoC#\CursoCSharpBackup\obj\Debug\net8.0\CursoCSharpBackup.AssemblyInfoInputs.cache
+C:\Users\Aluno Noite\Documents\CursoC#\CursoCSharpBackup\obj\Debug\net8.0\CursoCSharpBackup.AssemblyInfo.cs
+C:\Users\Aluno Noite\Documents\CursoC#\CursoCSharpBackup\obj\Debug\net8.0\CursoCSharpBackup.csproj.CoreCompileInputs.cache
+C:\Users\Aluno Noite\Documents\CursoC#\CursoCSharpBackup\bin\Debug\net8.0\CursoCSharpBackup.exe
+C:\Users\Aluno Noite\Documents\CursoC#\CursoCSharpBackup\bin\Debug\net8.0\CursoCSharpBackup.deps.json
+C:\Users\Aluno Noite\Documents\CursoC#\CursoCSharpBackup\bin\Debug\net8.0\CursoCSharpBackup.runtimeconfig.json
+C:\Users\Aluno Noite\Documents\CursoC#\CursoCSharpBackup\bin\Debug\net8.0\CursoCSharpBackup.dll
+C:\Users\Aluno Noite\Documents\CursoC#\CursoCSharpBackup\bin\Debug\net8.0\CursoCSharpBackup.pdb
+C:\Users\Aluno Noite\Documents\CursoC#\CursoCSharpBackup\obj\Debug\net8.0\CursoCSharpBackup.dll
+C:\Users\Aluno Noite\Documents\CursoC#\CursoCSharpBackup\obj\Debug\net8.0\refint\CursoCSharpBackup.dll
+C:\Users\Aluno Noite\Documents\CursoC#\CursoCSharpBackup\obj\Debug\net8.0\CursoCSharpBackup.pdb
+C:\Users\Aluno Noite\Documents\CursoC#\CursoCSharpBackup\obj\Debug\net8.0\CursoCSharpBackup.genruntimeconfig.cache
+C:\Users\Aluno Noite\Documents\CursoC#\CursoCSharpBackup\obj\Debug\net8.0\ref\CursoCSharpBackup.dll
