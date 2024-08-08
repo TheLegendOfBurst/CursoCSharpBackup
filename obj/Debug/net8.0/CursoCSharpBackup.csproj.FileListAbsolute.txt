@@ -12,3 +12,4 @@ C:\Users\Aluno Noite\Documents\CursoC#\CursoCSharpBackup\obj\Debug\net8.0\refint
 C:\Users\Aluno Noite\Documents\CursoC#\CursoCSharpBackup\obj\Debug\net8.0\CursoCSharpBackup.pdb
 C:\Users\Aluno Noite\Documents\CursoC#\CursoCSharpBackup\obj\Debug\net8.0\CursoCSharpBackup.genruntimeconfig.cache
 C:\Users\Aluno Noite\Documents\CursoC#\CursoCSharpBackup\obj\Debug\net8.0\ref\CursoCSharpBackup.dll
+C:\Users\Aluno Noite\Documents\CursoC#\CursoCSharpBackup\obj\Debug\net8.0\CursoCSharpBackup.sourcelink.json
