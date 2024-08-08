@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|c:\\users\\aluno noite\\documents\\cursoc#\\cursocsharpbackup\\guia\\6-guia operadorescomparacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|solutionrelative:guia\\6-guia operadorescomparacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|c:\\users\\aluno noite\\documents\\cursoc#\\cursocsharpbackup\\guia\\10-guia estruturarepeticao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|solutionrelative:guia\\10-guia estruturarepeticao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|c:\\users\\aluno noite\\documents\\cursoc#\\cursocsharpbackup\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAA0AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-08T17:56:36.498Z",
               "IsPinned": true,
@@ -41,19 +41,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "6-Guia OperadoresComparacao.cs",
-              "DocumentMoniker": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Guia\\6-Guia OperadoresComparacao.cs",
-              "RelativeDocumentMoniker": "Guia\\6-Guia OperadoresComparacao.cs",
-              "ToolTip": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Guia\\6-Guia OperadoresComparacao.cs",
-              "RelativeToolTip": "Guia\\6-Guia OperadoresComparacao.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAbAAAA",
+              "Title": "10-Guia EstruturaRepeticao.cs",
+              "DocumentMoniker": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Guia\\10-Guia EstruturaRepeticao.cs",
+              "RelativeDocumentMoniker": "Guia\\10-Guia EstruturaRepeticao.cs",
+              "ToolTip": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Guia\\10-Guia EstruturaRepeticao.cs",
+              "RelativeToolTip": "Guia\\10-Guia EstruturaRepeticao.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-08T17:42:46.582Z",
+              "WhenOpened": "2024-08-08T19:58:31.36Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             }
           ]
         }
