@@ -63,7 +63,7 @@ namespace CursoCSharp.Exercicios
     public class Variavel
     {
 
-        public int idade = 21;
+        public int idade = 21   ;
         public string? nome = "Davi";
         public void ExibirInformacoes()
         {

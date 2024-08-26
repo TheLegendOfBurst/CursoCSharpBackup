@@ -39,8 +39,7 @@
               "ViewState": "AQIAAAMAAAAAAAAAAAAAACEAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-08T17:56:36.498Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -50,7 +49,7 @@
               "RelativeDocumentMoniker": "Exercicios\\Exercicio23\\08.cs",
               "ToolTip": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Exercicios\\Exercicio23\\08.cs",
               "RelativeToolTip": "Exercicios\\Exercicio23\\08.cs",
-              "ViewState": "AQIAAMMAAAAAAAAAAAArwEEAAAAdAAAA",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAAAEEAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-26T17:48:26.98Z",
               "EditorCaption": ""
@@ -65,8 +64,7 @@
               "RelativeToolTip": "Guia\\17-Guia Encapsulamento.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-26T17:33:55.48Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-26T17:33:55.48Z"
             }
           ]
         }
