@@ -34,3 +34,4 @@ Console.WriteLine($"O resultado de XOR lógico é {resultado}");
 // _11_Guia_Arrays.DemonstraArray();
 
 var exemplo = new ExemploUsoDynamic();
+exemplo.DemonstrarUsoDynamic();
