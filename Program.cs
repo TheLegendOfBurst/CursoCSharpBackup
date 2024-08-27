@@ -31,4 +31,6 @@ Console.WriteLine($"O resultado de XOR lógico é {resultado}");
 // _8_Guia_Conversao.DemonstrarConversoes();
 // _9_Guia_EstruturaCondicionais.DemostrarCondicional();
 // _10_Guia_EstruturaRepeticao.DemonstrarRepeticoes();
-_11_Guia_Arrays.DemonstraArray();
+// _11_Guia_Arrays.DemonstraArray();
+
+var exemplo = new ExemploUsoDynamic();
