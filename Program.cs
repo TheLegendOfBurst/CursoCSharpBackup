@@ -14,7 +14,7 @@ resultado = _3_Guia_OperadoresLogicos.Negacao(true);
 Console.WriteLine($"O resultado de NOT lógico é {resultado}");
 resultado = _3_Guia_OperadoresLogicos.OUExclusivo(true, true);
 Console.WriteLine($"O resultado de XOR lógico é {resultado}");
-*/
+
 // _5_Guia_OperadoresAtribuicao.AtribuicaoSimples();
 // _5_Guia_OperadoresAtribuicao.AtribuicaoSoma();
 // _5_Guia_OperadoresAtribuicao.AtribuicaoSubtracao();
@@ -34,4 +34,7 @@ Console.WriteLine($"O resultado de XOR lógico é {resultado}");
 // _11_Guia_Arrays.DemonstraArray();
 
 var exemplo = new ExemploUsoDynamic();
-exemplo.DemonstrarUsoDynamic();
+exemplo.DemonstrarUsoDynamic(); 
+
+var exemplo = new ExemploUsoLINQ();
+exemplo.DemonstrarUsoLINQ(); */
