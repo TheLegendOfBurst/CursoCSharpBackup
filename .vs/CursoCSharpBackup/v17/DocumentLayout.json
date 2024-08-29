@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|c:\\users\\aluno noite\\documents\\cursoc#\\cursocsharpbackup\\exercicios\\exerciciopratico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|solutionrelative:exercicios\\exerciciopratico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|c:\\users\\aluno noite\\documents\\cursoc#\\cursocsharpbackup\\exercicios\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|solutionrelative:exercicios\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|c:\\users\\aluno noite\\documents\\cursoc#\\cursocsharpbackup\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,7 +30,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -31,7 +39,34 @@
               "ViewState": "AQIAABUAAAAAAAAAAAAAACcAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-08T17:56:36.498Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "test.cs",
+              "DocumentMoniker": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Exercicios\\test.cs",
+              "RelativeDocumentMoniker": "Exercicios\\test.cs",
+              "ToolTip": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Exercicios\\test.cs",
+              "RelativeToolTip": "Exercicios\\test.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAABoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T18:33:32.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ExercicioPratico.cs",
+              "DocumentMoniker": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Exercicios\\ExercicioPratico.cs",
+              "RelativeDocumentMoniker": "Exercicios\\ExercicioPratico.cs",
+              "ToolTip": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Exercicios\\ExercicioPratico.cs",
+              "RelativeToolTip": "Exercicios\\ExercicioPratico.cs",
+              "ViewState": "AQIAADYBAAAAAAAAAAAmwFgBAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T17:58:26.561Z",
+              "EditorCaption": ""
             }
           ]
         }
