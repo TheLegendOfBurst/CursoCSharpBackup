@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|c:\\users\\aluno noite\\documents\\cursoc#\\cursocsharpbackup\\guia\\26-guia programveiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|solutionrelative:guia\\26-guia programveiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|c:\\users\\aluno noite\\documents\\cursoc#\\cursocsharpbackup\\guia\\25-guia programlivro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|solutionrelative:guia\\25-guia programlivro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|c:\\users\\aluno noite\\documents\\cursoc#\\cursocsharpbackup\\guia\\26-guia programveiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|solutionrelative:guia\\26-guia programveiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,15 +36,19 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAJsAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAALoBAAAAAAAAAADgv2wAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-08T17:56:36.498Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "26-Guia ProgramVeiculo.cs",
               "DocumentMoniker": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Guia\\26-Guia ProgramVeiculo.cs",
               "RelativeDocumentMoniker": "Guia\\26-Guia ProgramVeiculo.cs",
@@ -52,18 +56,17 @@
               "RelativeToolTip": "Guia\\26-Guia ProgramVeiculo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T19:22:00.819Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-10T19:22:00.819Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "25-Guia Programlivro.cs",
               "DocumentMoniker": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Guia\\25-Guia Programlivro.cs",
               "RelativeDocumentMoniker": "Guia\\25-Guia Programlivro.cs",
               "ToolTip": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Guia\\25-Guia Programlivro.cs",
               "RelativeToolTip": "Guia\\25-Guia Programlivro.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAywAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-10T19:21:19.391Z",
               "EditorCaption": ""

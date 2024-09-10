@@ -232,7 +232,7 @@ namespace BibliotecaVeiculos
             Console.WriteLine("==============================================");
             Console.Write("Digite o título do livro a ser devolvido: ");
             string titulo = Console.ReadLine();
-            Livro livro = biblioteca.BuscarLivroPorTitulo(titulo);
+            Livro livro = usuario.BuscarLivroEmprestadoPorTitulo(titulo); // Verifique se o livro está emprestado
             if (livro != null)
             {
                 usuario.DevolverLivro(livro, biblioteca);
@@ -323,6 +323,180 @@ namespace BibliotecaVeiculos
             {
                 Console.WriteLine("\nVeículo não encontrado.");
             }
+        }
+    }
+
+    public class Biblioteca
+    {
+        private List<Livro> livros = new List<Livro>();
+
+        public void AdicionarLivro(Livro livro)
+        {
+            livros.Add(livro);
+        }
+
+        public void ListarLivros()
+        {
+            foreach (var livro in livros)
+            {
+                livro.ExibirDetalhes();
+            }
+        }
+
+        public Livro BuscarLivroPorTitulo(string titulo)
+        {
+            return livros.FirstOrDefault(l => l.Titulo.Equals(titulo, StringComparison.OrdinalIgnoreCase));
+        }
+
+        public void AdicionarLivroDevolvido(Livro livro)
+        {
+            if (!livros.Contains(livro))
+            {
+                livros.Add(livro);
+            }
+        }
+    }
+
+    public class Usuario
+    {
+        private List<Livro> livrosEmprestados = new List<Livro>();
+        public string Nome { get; set; }
+        public string CPF { get; set; }
+
+        public Usuario(string nome, string cpf)
+        {
+            Nome = nome;
+            CPF = cpf;
+        }
+
+        public void EmprestarLivro(Livro livro, Biblioteca biblioteca)
+        {
+            if (livro != null && biblioteca != null)
+            {
+                livrosEmprestados.Add(livro);
+                biblioteca.AdicionarLivroDevolvido(livro);
+            }
+        }
+
+        public void DevolverLivro(Livro livro, Biblioteca biblioteca)
+        {
+            if (livrosEmprestados.Remove(livro))
+            {
+                biblioteca.AdicionarLivroDevolvido(livro);
+            }
+        }
+
+        public Livro BuscarLivroEmprestadoPorTitulo(string titulo)
+        {
+            return livrosEmprestados.FirstOrDefault(l => l.Titulo.Equals(titulo, StringComparison.OrdinalIgnoreCase));
+        }
+
+        public void ExibirLivrosEmprestados()
+        {
+            foreach (var livro in livrosEmprestados)
+            {
+                livro.ExibirDetalhes();
+            }
+        }
+    }
+
+    public class Livro
+    {
+        public string Titulo { get; set; }
+        public string Autor { get; set; }
+        public int Ano { get; set; }
+        public int Paginas { get; set; }
+
+        public Livro(string titulo, string autor, int ano, int paginas)
+        {
+            Titulo = titulo;
+            Autor = autor;
+            Ano = ano;
+            Paginas = paginas;
+        }
+
+        public void ExibirDetalhes()
+        {
+            Console.WriteLine($"Título: {Titulo}, Autor: {Autor}, Ano: {Ano}, Páginas: {Paginas}");
+        }
+    }
+
+    public class Garagem
+    {
+        private List<Veiculo> veiculos = new List<Veiculo>();
+
+        public void AdicionarVeiculo(Veiculo veiculo)
+        {
+            veiculos.Add(veiculo);
+        }
+
+        public List<Veiculo> ListarTodosVeiculos()
+        {
+            return veiculos;
+        }
+
+        public Veiculo BuscarVeiculoPorModelo(string modelo)
+        {
+            return veiculos.FirstOrDefault(v => v.Modelo.Equals(modelo, StringComparison.OrdinalIgnoreCase));
+        }
+
+        public void VenderVeiculo(Veiculo veiculo)
+        {
+            if (veiculos.Contains(veiculo))
+            {
+                veiculos.Remove(veiculo);
+            }
+        }
+    }
+
+    public class Cliente
+    {
+        private List<Veiculo> veiculosComprados = new List<Veiculo>();
+        public string Nome { get; set; }
+        public string CPF { get; set; }
+
+        public Cliente(string nome, string cpf)
+        {
+            Nome = nome;
+            CPF = cpf;
+        }
+
+        public void ComprarVeiculo(Veiculo veiculo, Garagem garagem)
+        {
+            if (veiculo != null && garagem != null)
+            {
+                veiculosComprados.Add(veiculo);
+                garagem.VenderVeiculo(veiculo);
+            }
+        }
+
+        public void ExibirVeiculosComprados()
+        {
+            foreach (var veiculo in veiculosComprados)
+            {
+                veiculo.ExibirDetalhes();
+            }
+        }
+    }
+
+    public class Veiculo
+    {
+        public string Marca { get; set; }
+        public string Modelo { get; set; }
+        public int Ano { get; set; }
+        public int Quilometragem { get; set; }
+
+        public Veiculo(string marca, string modelo, int ano, int quilometragem)
+        {
+            Marca = marca;
+            Modelo = modelo;
+            Ano = ano;
+            Quilometragem = quilometragem;
+        }
+
+        public void ExibirDetalhes()
+        {
+            Console.WriteLine($"Marca: {Marca}, Modelo: {Modelo}, Ano: {Ano}, Quilometragem: {Quilometragem}");
         }
     }
 }
