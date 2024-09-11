@@ -1,6 +1,7 @@
 ﻿using CursoCSharp;
 using CursoCSharp.Exercicios;
 using CursoCSharp.Guia;
+using CursoCSharp.Paradigmas;
 using CursoCSharpBackup.Guia;
 using Microsoft.VisualBasic;
 using System;
@@ -43,6 +44,7 @@ exemplo.DemonstrarUsoLINQ(); */
 nulo.ExibirValores();
 nulo.ExplicarConceitos(); */
 
+/*
 namespace BibliotecaVeiculos
 {
     class Program
@@ -500,4 +502,17 @@ namespace BibliotecaVeiculos
         }
     }
 }
+*/
+
+// Instância de Cachorro
+Cachorro cachorro = new Cachorro("Rex");
+cachorro.ExibirInformacoes();
+cachorro.FazerSom();
+cachorro.ExplicarHeranca();
+
+// Instância de Gato
+Gato gato = new Gato("Mimi");
+gato.ExibirInformacoes();
+gato.FazerSom();
+gato.ExplicarHeranca();
 
