@@ -8,10 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CursoCSharp.Exercicios
-{
+{ /*
     /* 1. Defina uma classe chamada Carro que tenha as seguintes propriedades: marca
         (string), modelo (string) e ano (int). Crie um objeto dessa classe e inicialize suas
-        propriedades. */
+        propriedades. 
     public class Carro
     {
 
@@ -20,7 +20,7 @@ namespace CursoCSharp.Exercicios
         public int Ano;
 
         /* 3. Adicione um método construtor na classe Carro que receba os parâmetros para
-            inicializar marca, modelo e ano. */
+            inicializar marca, modelo e ano. 
 
         public Carro(string marca, string modelo, int ano)
         {
@@ -30,7 +30,7 @@ namespace CursoCSharp.Exercicios
         }
 
         /* 2. Crie um método na classe Carro chamado ExibirDetalhes, que imprime no console os
-            detalhes do carro (marca, modelo e ano). */
+            detalhes do carro (marca, modelo e ano). 
 
         public void ExibirInformacoes()
         {
@@ -39,7 +39,7 @@ namespace CursoCSharp.Exercicios
     }
 
     /* 4. Defina uma classe chamada Pessoa com as propriedades nome (string), idade (int) e
-        cidade (string). Crie um objeto dessa classe e inicialize suas propriedades. */
+        cidade (string). Crie um objeto dessa classe e inicialize suas propriedades. 
 
     public class PessoaNova
     {
@@ -48,7 +48,7 @@ namespace CursoCSharp.Exercicios
         public string? Cidade;
 
         /*  5. Implemente um método na classe Pessoa chamado ExibirInformacoes, que imprime
-         no console as informações da pessoa (nome, idade e cidade). */
+         no console as informações da pessoa (nome, idade e cidade). 
         public void ExibirInformacoes()
         {
             Console.WriteLine($"Nome: {Nome}, Idade: {Idade}, Cidade: {Cidade}");
@@ -58,7 +58,7 @@ namespace CursoCSharp.Exercicios
 
     /* 6. Declare uma variável do tipo int chamada idade e atribua a ela o valor 25. Em seguida,
     declare uma variável do tipo string chamada nome e atribua a ela o seu nome.
-    Imprima ambos os valores no console. */
+    Imprima ambos os valores no console. 
 
     public class Variavel
     {
@@ -71,7 +71,7 @@ namespace CursoCSharp.Exercicios
         }
 
         /* 7. Crie um método que receba dois parâmetros do tipo int e retorne a soma desses
-        números. Chame esse método em Main e exiba o resultado. */
+        números. Chame esse método em Main e exiba o resultado. 
 
         public void Soma(int numero1, int numero2)
         {
@@ -81,7 +81,7 @@ namespace CursoCSharp.Exercicios
 
         /* 8. Declare uma variável do tipo bool chamada estaChovendo e atribua a ela o valor false.
         Escreva uma estrutura condicional que exiba “Está chovendo” ou “Não está chovendo”
-        com base no valor da variável. */
+        com base no valor da variável. 
 
         public bool estaChovendo = false;
         public void ExibirEstaChovendo()
@@ -98,7 +98,7 @@ namespace CursoCSharp.Exercicios
 
         /* 9. Implemente um método chamado VerificarMaioridade que recebe uma idade como
             parâmetro e retorna true se a idade for maior ou igual a 18, e false caso contrário.
-            Teste esse método no método Main.(bool resultado = objeto.VerificarIdade) */
+            Teste esse método no método Main.(bool resultado = objeto.VerificarIdade) 
 
         public bool VerificarMaioridade(int idade)
         {
@@ -114,7 +114,7 @@ namespace CursoCSharp.Exercicios
         }
 
         /* 10. Declare uma variável do tipo double chamada altura e atribua a ela o valor 1.75.
-            Imprima o valor no console formatado para duas casas decimais. */
+            Imprima o valor no console formatado para duas casas decimais. 
 
         public double altura = 1.75;
         public void ExibirAltura()
@@ -127,7 +127,7 @@ namespace CursoCSharp.Exercicios
     public class Sobrecarga
     {
         /* 11. Crie um método CalcularArea que calcule a área de um círculo recebendo o raio como
-        parâmetro e retorne o resultado. Use a fórmula Área = π * raio^2. */
+        parâmetro e retorne o resultado. Use a fórmula Área = π * raio^2. 
 
         public void CalcularArea(double raio)
         {
@@ -137,7 +137,7 @@ namespace CursoCSharp.Exercicios
         }
 
         /* 12. Sobrecarga de métodos: Crie uma sobrecarga do método CalcularArea para calcular a
-        área de um retângulo, recebendo a largura e a altura como parâmetros. */
+        área de um retângulo, recebendo a largura e a altura como parâmetros. 
 
         public void CalcularArea(double largura, double altura)
         {
@@ -152,7 +152,7 @@ namespace CursoCSharp.Exercicios
     public class Calculadora
     {
         /* 13. Crie uma classe chamada Calculadora com um método Multiplicar que recebe dois
-        parâmetros do tipo int e retorna o resultado da multiplicação. */
+        parâmetros do tipo int e retorna o resultado da multiplicação. 
         public void Multiplicar(int numero1, int numero2)
         {
             int MultiplicaNum = numero1 * numero2;
@@ -161,7 +161,7 @@ namespace CursoCSharp.Exercicios
 
         /* 14. Adicione um método à classe Calculadora chamado Multiplicar que seja uma
         sobrecarga, recebendo três parâmetros do tipo int e retornando o resultado da
-        multiplicação. */
+        multiplicação. 
 
         public void Multiplicar(int numero1, int numero2, int numero3)
         {
@@ -175,7 +175,7 @@ namespace CursoCSharp.Exercicios
     {
         /* 15. Declare uma variável do tipo char chamada letra e atribua a ela a letra ‘A’. Imprima o
         valor dessa variável no console.
-        */
+        
         public char letra = 'A';
         public void ExibirLetra()
         {
@@ -207,7 +207,7 @@ namespace CursoCSharp.Exercicios
 
         /* 18. Crie um método chamado ImprimirPares que receba um número inteiro como
         parâmetro e imprima todos os números pares de 0 até o número passado como
-        parâmetro. */
+        parâmetro. 
         public void ImprimirPares(int numero)
         {
             for (int i = 0; i <= numero; i++)
@@ -221,7 +221,7 @@ namespace CursoCSharp.Exercicios
         }
 
         /* 19. Escreva uma estrutura condicional que receba uma nota (variável do tipo double) e
-        imprima “ Aprovado”; se a nota for maior ou igual a 7, e “Reprovado”; caso contrário. */
+        imprima “ Aprovado”; se a nota for maior ou igual a 7, e “Reprovado”; caso contrário. 
         public void AvaliarNota(double nota)
         {
             if (nota >= 7)
@@ -235,7 +235,7 @@ namespace CursoCSharp.Exercicios
         }
 
         /* 20. Crie um método chamado Fatorial que receba um número inteiro como parâmetro e
-            retorne o fatorial desse número. Utilize um loop for para calcular o fatorial. */
+            retorne o fatorial desse número. Utilize um loop for para calcular o fatorial. 
         public void Fatorial(int numero)
         {
             int fatorial = 1;
@@ -247,5 +247,5 @@ namespace CursoCSharp.Exercicios
         }
 
     }
-
+        */
 }

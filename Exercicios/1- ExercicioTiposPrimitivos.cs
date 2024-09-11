@@ -26,7 +26,7 @@ using System.Threading.Tasks;
 // 20 Peça ao usuário para inserir seu nome e um lema de vida, depois exiba ambos:
 
 namespace CursoCSharp.Exercicios
-{
+{ /*
     public class ExercicioTiposPrimitivos
     {
         // 1. Modifique o método LerArmazenar para armazenar o sobrenome do usuário e exibi-lo junto com o nome:
@@ -321,5 +321,6 @@ namespace CursoCSharp.Exercicios
             Console.Write("Digite seu lema de vida: ");
             lemaDeVida = Console.ReadLine();
         }
-    }
+    }*/
 }
+    

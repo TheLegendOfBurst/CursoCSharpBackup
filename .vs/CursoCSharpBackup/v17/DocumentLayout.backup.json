@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|c:\\users\\aluno noite\\documents\\cursoc#\\cursocsharpbackup\\paradigmas\\03-herenca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|solutionrelative:paradigmas\\03-herenca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|c:\\users\\aluno noite\\documents\\cursoc#\\cursocsharpbackup\\paradigmas\\07-multiplicidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|solutionrelative:paradigmas\\07-multiplicidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|c:\\users\\aluno noite\\documents\\cursoc#\\cursocsharpbackup\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -32,9 +32,9 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAPQBAAAAAAAAAAAAAAYCAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACUCAAAAAAAAAAAqwEECAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-08T17:56:36.498Z",
+              "WhenOpened": "2024-09-11T19:40:38.049Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -45,14 +45,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "03-Herenca.cs",
-              "DocumentMoniker": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Paradigmas\\03-Herenca.cs",
-              "RelativeDocumentMoniker": "Paradigmas\\03-Herenca.cs",
-              "ToolTip": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Paradigmas\\03-Herenca.cs",
-              "RelativeToolTip": "Paradigmas\\03-Herenca.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAswDoAAABYAAAAAAAAAA==",
+              "Title": "07-Multiplicidade.cs",
+              "DocumentMoniker": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Paradigmas\\07-Multiplicidade.cs",
+              "RelativeDocumentMoniker": "Paradigmas\\07-Multiplicidade.cs",
+              "ToolTip": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Paradigmas\\07-Multiplicidade.cs",
+              "RelativeToolTip": "Paradigmas\\07-Multiplicidade.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T17:30:10.139Z",
+              "WhenOpened": "2024-09-11T19:45:33.825Z",
               "EditorCaption": ""
             }
           ]
