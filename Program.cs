@@ -7,6 +7,392 @@ using CursoCSharpBackup.Paradigmas;
 using Microsoft.VisualBasic;
 using System;
 
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text.Json;
+
+namespace GerenciamentoHospital
+{
+    class Program
+    {
+        static List<Paciente> pacientes = new List<Paciente>();
+        static List<Medico> medicos = new List<Medico>();
+        static List<Consulta> consultas = new List<Consulta>();
+        static string arquivoPacientes = @"C:\Users\Aluno Noite\Documents\CursoC#\CursoCSharpBackup\Armazenamento Json\pacientes.json";
+        static string arquivoMedicos = @"C:\Users\Aluno Noite\Documents\CursoC#\CursoCSharpBackup\Armazenamento Json\medicos.json";
+        static string arquivoConsultas = @"C:\Users\Aluno Noite\Documents\CursoC#\CursoCSharpBackup\Armazenamento Json\consultas.json";
+        static int proximoIdPaciente = 1;
+        static int proximoIdMedico = 1;
+        static int proximoIdConsulta = 1;
+
+        static void Main(string[] args)
+        {
+            CarregarDados();
+            int opcao;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("======== SISTEMA DE GERENCIAMENTO HOSPITALAR ========");
+                Console.WriteLine("1. Gerenciar Pacientes");
+                Console.WriteLine("2. Gerenciar Médicos");
+                Console.WriteLine("3. Agendar Consulta");
+                Console.WriteLine("4. Listar Consultas");
+                Console.WriteLine("0. Sair");
+                Console.Write("Escolha uma opção: ");
+                opcao = int.Parse(Console.ReadLine());
+
+                switch (opcao)
+                {
+                    case 1:
+                        MenuPacientes();
+                        break;
+                    case 2:
+                        MenuMedicos();
+                        break;
+                    case 3:
+                        AgendarConsulta();
+                        break;
+                    case 4:
+                        ListarConsultas();
+                        break;
+                    case 0:
+                        SalvarDados();
+                        Console.WriteLine("Saindo...");
+                        break;
+                    default:
+                        Console.WriteLine("Opção inválida.");
+                        break;
+                }
+            } while (opcao != 0);
+        }
+
+        // Métodos de gerenciamento de pacientes
+        static void MenuPacientes()
+        {
+            int opcao;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("==== Gerenciar Pacientes ====");
+                Console.WriteLine("1. Adicionar Paciente");
+                Console.WriteLine("2. Listar Pacientes");
+                Console.WriteLine("3. Atualizar Paciente");
+                Console.WriteLine("4. Remover Paciente");
+                Console.WriteLine("0. Voltar");
+                opcao = int.Parse(Console.ReadLine());
+
+                switch (opcao)
+                {
+                    case 1:
+                        AdicionarPaciente();
+                        break;
+                    case 2:
+                        ListarPacientes();
+                        break;
+                    case 3:
+                        AtualizarPaciente();
+                        break;
+                    case 4:
+                        RemoverPaciente();
+                        break;
+                    case 0:
+                        break;
+                    default:
+                        Console.WriteLine("Opção inválida.");
+                        break;
+                }
+            } while (opcao != 0);
+        }
+
+        static void AdicionarPaciente()
+        {
+            Console.Write("Digite o nome do paciente: ");
+            string nome = Console.ReadLine();
+            Console.Write("Digite o CPF do paciente: ");
+            string cpf = Console.ReadLine();
+            Paciente novoPaciente = new Paciente(proximoIdPaciente++, nome, cpf);
+            pacientes.Add(novoPaciente);
+            SalvarPacientes();
+            Console.WriteLine("Paciente adicionado com sucesso!");
+        }
+
+        static void ListarPacientes()
+        {
+            Console.WriteLine("=== Lista de Pacientes ===");
+            if (pacientes.Count == 0)
+            {
+                Console.WriteLine("\nNenhum paciente cadastrado.");
+            }
+            else
+            {
+                foreach (var paciente in pacientes)
+                {
+                    Console.WriteLine($"ID: {paciente.Id} - Nome: {paciente.Nome} - CPF: {paciente.Cpf}");
+                }
+            }
+
+            Console.WriteLine("\nPressione qualquer tecla para voltar ao menu...");
+            Console.ReadKey();
+        }
+
+        static void AtualizarPaciente()
+        {
+            ListarPacientes();
+            Console.Write("Digite o ID do paciente a ser atualizado: ");
+            int id = int.Parse(Console.ReadLine());
+            var paciente = pacientes.FirstOrDefault(p => p.Id == id);
+
+            if (paciente != null)
+            {
+                Console.Write("Novo nome: ");
+                paciente.Nome = Console.ReadLine();
+                Console.Write("Novo CPF: ");
+                paciente.Cpf = Console.ReadLine();
+                SalvarPacientes();
+                Console.WriteLine("Paciente atualizado com sucesso.");
+            }
+            else
+            {
+                Console.WriteLine("Paciente não encontrado.");
+            }
+        }
+
+        static void RemoverPaciente()
+        {
+            ListarPacientes();
+            Console.Write("Digite o ID do paciente a ser removido: ");
+            int id = int.Parse(Console.ReadLine());
+            var paciente = pacientes.FirstOrDefault(p => p.Id == id);
+
+            if (paciente != null)
+            {
+                pacientes.Remove(paciente);
+                SalvarPacientes();
+                Console.WriteLine("Paciente removido com sucesso.");
+            }
+            else
+            {
+                Console.WriteLine("Paciente não encontrado.");
+            }
+        }
+
+        // Métodos de gerenciamento de médicos
+        static void MenuMedicos()
+        {
+            int opcao;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("==== Gerenciar Médicos ====");
+                Console.WriteLine("1. Adicionar Médico");
+                Console.WriteLine("2. Listar Médicos");
+                Console.WriteLine("3. Atualizar Médico");
+                Console.WriteLine("4. Remover Médico");
+                Console.WriteLine("0. Voltar");
+                opcao = int.Parse(Console.ReadLine());
+
+                switch (opcao)
+                {
+                    case 1:
+                        AdicionarMedico();
+                        break;
+                    case 2:
+                        ListarMedicos();
+                        break;
+                    case 3:
+                        AtualizarMedico();
+                        break;
+                    case 4:
+                        RemoverMedico();
+                        break;
+                    case 0:
+                        break;
+                    default:
+                        Console.WriteLine("Opção inválida.");
+                        break;
+                }
+            } while (opcao != 0);
+        }
+
+        static void AdicionarMedico()
+        {
+            Console.Write("Digite o nome do médico: ");
+            string nome = Console.ReadLine();
+            Console.Write("Digite a especialidade do médico: ");
+            string especialidade = Console.ReadLine();
+            Medico novoMedico = new Medico(proximoIdMedico++, nome, especialidade);
+            medicos.Add(novoMedico);
+            SalvarMedicos();
+            Console.WriteLine("Médico adicionado com sucesso!");
+        }
+
+        static void ListarMedicos()
+        {
+            Console.WriteLine("=== Lista de Médicos ===");
+            if (medicos.Count == 0)
+            {
+                Console.WriteLine("\nNenhum médico cadastrado.");
+            }
+            else
+            {
+                foreach (var medico in medicos)
+                {
+                    Console.WriteLine($"ID: {medico.Id} - Nome: {medico.Nome} - Especialidade: {medico.Especialidade}");
+                }
+            }
+
+            Console.WriteLine("\nPressione qualquer tecla para voltar ao menu...");
+            Console.ReadKey();
+        }
+
+        static void AtualizarMedico()
+        {
+            ListarMedicos();
+            Console.Write("Digite o ID do médico a ser atualizado: ");
+            int id = int.Parse(Console.ReadLine());
+            var medico = medicos.FirstOrDefault(m => m.Id == id);
+
+            if (medico != null)
+            {
+                Console.Write("Novo nome: ");
+                medico.Nome = Console.ReadLine();
+                Console.Write("Nova especialidade: ");
+                medico.Especialidade = Console.ReadLine();
+                SalvarMedicos();
+                Console.WriteLine("Médico atualizado com sucesso.");
+            }
+            else
+            {
+                Console.WriteLine("Médico não encontrado.");
+            }
+        }
+
+        static void RemoverMedico()
+        {
+            ListarMedicos();
+            Console.Write("Digite o ID do médico a ser removido: ");
+            int id = int.Parse(Console.ReadLine());
+            var medico = medicos.FirstOrDefault(m => m.Id == id);
+
+            if (medico != null)
+            {
+                medicos.Remove(medico);
+                SalvarMedicos();
+                Console.WriteLine("Médico removido com sucesso.");
+            }
+            else
+            {
+                Console.WriteLine("Médico não encontrado.");
+            }
+        }
+
+        // Métodos de agendamento de consultas
+        static void AgendarConsulta()
+        {
+            Console.Clear();
+            Console.WriteLine("==== Agendar Consulta ====");
+            ListarPacientes();
+            Console.Write("Digite o ID do paciente: ");
+            int idPaciente = int.Parse(Console.ReadLine());
+            var paciente = pacientes.FirstOrDefault(p => p.Id == idPaciente);
+
+            if (paciente != null)
+            {
+                ListarMedicos();
+                Console.Write("Digite o ID do médico: ");
+                int idMedico = int.Parse(Console.ReadLine());
+                var medico = medicos.FirstOrDefault(m => m.Id == idMedico);
+
+                if (medico != null)
+                {
+                    Console.Write("Digite a data da consulta (dd/MM/yyyy): ");
+                    DateTime dataConsulta = DateTime.Parse(Console.ReadLine());
+
+                    Consulta novaConsulta = new Consulta(proximoIdConsulta++, paciente, medico, dataConsulta);
+                    consultas.Add(novaConsulta);
+                    SalvarConsultas();
+                    Console.WriteLine("Consulta agendada com sucesso!");
+                }
+                else
+                {
+                    Console.WriteLine("Médico não encontrado.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Paciente não encontrado.");
+            }
+        }
+
+        static void ListarConsultas()
+        {
+            Console.Clear();
+            Console.WriteLine("=== Lista de Consultas ===");
+            if (consultas.Count == 0)
+            {
+                Console.WriteLine("\nNenhuma consulta cadastrada.");
+            }
+            else
+            {
+                foreach (var consulta in consultas)
+                {
+                    Console.WriteLine($"ID: {consulta.Id} - Paciente: {consulta.Paciente.Nome} - Médico: {consulta.Medico.Nome} ");
+                }
+            }
+
+            Console.WriteLine("\nPressione qualquer tecla para voltar ao menu...");
+            Console.ReadKey();
+        }
+
+        // Métodos de persistência de dados
+        static void CarregarDados()
+        {
+            if (File.Exists(arquivoPacientes))
+                pacientes = JsonSerializer.Deserialize<List<Paciente>>(File.ReadAllText(arquivoPacientes));
+            if (File.Exists(arquivoMedicos))
+                medicos = JsonSerializer.Deserialize<List<Medico>>(File.ReadAllText(arquivoMedicos));
+            if (File.Exists(arquivoConsultas))
+                consultas = JsonSerializer.Deserialize<List<Consulta>>(File.ReadAllText(arquivoConsultas));
+
+            proximoIdPaciente = pacientes.Any() ? pacientes.Max(p => p.Id) + 1 : 1;
+            proximoIdMedico = medicos.Any() ? medicos.Max(m => m.Id) + 1 : 1;
+            proximoIdConsulta = consultas.Any() ? consultas.Max(c => c.Id) + 1 : 1;
+        }
+
+        static void SalvarDados()
+        {
+            SalvarPacientes();
+            SalvarMedicos();
+            SalvarConsultas();
+        }
+
+        static void SalvarPacientes()
+        {
+            File.WriteAllText(arquivoPacientes, JsonSerializer.Serialize(pacientes));
+        }
+
+        static void SalvarMedicos()
+        {
+            File.WriteAllText(arquivoMedicos, JsonSerializer.Serialize(medicos));
+        }
+
+        static void SalvarConsultas()
+        {
+            File.WriteAllText(arquivoConsultas, JsonSerializer.Serialize(consultas));
+        }
+    }
+}
+
+
+
+
+
+
+
+
 /*bool resultado;
 resultado = _3_Guia_OperadoresLogicos.ELogico(true, true);
 Console.WriteLine($"O resultado de AND lógico é {resultado}");
@@ -592,7 +978,7 @@ gato.FazerSom();
 // Explicando o conceito de classe abstrata
 cachorro.ExplicarClasseAbstrata();
 */
-
+/*
 // Criando instâncias de classes que implementam a interface
 IAnimal cachorro = new CachorroInter("Rex");
 IAnimal gato = new GatoInter("Mimi");
@@ -607,3 +993,4 @@ gato.FazerSom();
 // Explicando o conceito de interface
 ExplicadorDeInterface explicador = new ExplicadorDeInterface();
 explicador.ExplicarInterface();
+*/
