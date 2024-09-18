@@ -656,9 +656,9 @@ namespace GerenciamentoHospital
 
             // Listar pacientes
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("\n╔══════════════════════════════════════════════════════════╗");
-            Console.WriteLine("║                   LISTA DE PACIENTES                     ║");
-            Console.WriteLine("╚══════════════════════════════════════════════════════════╝");
+            Console.WriteLine("\n╔═══════════════════════════════════════════════════════╗");
+            Console.WriteLine("║                   LISTA DE PACIENTES                  ║");
+            Console.WriteLine("╚═══════════════════════════════════════════════════════╝");
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("╔═════╦══════════════════════╦══════════════╗");
             Console.WriteLine("║ ID  ║ Nome                 ║ CPF          ║");
@@ -673,9 +673,9 @@ namespace GerenciamentoHospital
 
             // Listar médicos
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("\n╔═════════════════════════════════════════════════════════════════════════════╗");
-            Console.WriteLine("║                            LISTA DE MÉDICOS                                 ║");
-            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════╝");
+            Console.WriteLine("\n╔═══════════════════════════════════════════════════════╗");
+            Console.WriteLine("║                            LISTA DE MÉDICOS           ║");
+            Console.WriteLine("╚═══════════════════════════════════════════════════════╝");
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("╔═════╦══════════════════════╦══════════════════╗");
             Console.WriteLine("║ ID  ║ Nome                 ║ Especialidade    ║");
