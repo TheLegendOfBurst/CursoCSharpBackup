@@ -148,10 +148,41 @@ namespace GerenciamentoHospital
 
         static void AdicionarPaciente()
         {
-            Console.Write("Digite o nome do paciente: ");
-            string nome = Console.ReadLine();
-            Console.Write("Digite o CPF do paciente: ");
-            string cpf = Console.ReadLine();
+            string nome;
+            string cpf;
+
+            // Validação do Nome
+            while (true)
+            {
+                Console.Write("Digite o nome do paciente: ");
+                nome = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(nome) || !System.Text.RegularExpressions.Regex.IsMatch(nome, @"^[a-zA-Z\s]+$"))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Nome inválido. Apenas letras e espaços são permitidos.");
+                    Console.ResetColor();
+                    continue;
+                }
+                break;
+            }
+
+            // Validação do CPF
+            while (true)
+            {
+                Console.Write("Digite o CPF do paciente (apenas números): ");
+                cpf = Console.ReadLine();
+
+                if (cpf.Length != 11 || !cpf.All(char.IsDigit))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("CPF inválido. Deve ter exatamente 11 números.");
+                    Console.ResetColor();
+                    continue;
+                }
+                break;
+            }
+
             Paciente novoPaciente = new Paciente(proximoIdPaciente++, nome, cpf);
             pacientes.Add(novoPaciente);
             SalvarPacientes();
@@ -160,6 +191,7 @@ namespace GerenciamentoHospital
             Console.WriteLine();
             Console.WriteLine("Pressione Qualquer Tecla para continuar");
         }
+
 
         static void ListarPacientes()
         {
@@ -289,15 +321,61 @@ namespace GerenciamentoHospital
 
         static void AdicionarMedico()
         {
-            Console.Write("Digite o nome do médico: ");
-            string nome = Console.ReadLine();
-            Console.Write("Digite a especialidade do médico: ");
-            string especialidade = Console.ReadLine();
+            string nome;
+            string especialidade;
+
+            // Validação do Nome
+            while (true)
+            {
+                Console.Write("Digite o nome do médico: ");
+                nome = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(nome) || !System.Text.RegularExpressions.Regex.IsMatch(nome, @"^[a-zA-Z\s]+$"))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Nome inválido. Apenas letras e espaços são permitidos.");
+                    Console.ResetColor();
+                    continue;
+                }
+                break;
+            }
+
+            // Lista de especialidades válidas
+            var especialidadesValidas = new List<string>
+    {
+        "Cardiologista",
+        "Dermatologista",
+        "Pediatra",
+        "Ginecologista",
+        "Ortopedista",
+        "Neurologista",
+        "Oftalmologista",
+        "Psiquiatra"
+        // Adicione mais especialidades conforme necessário
+    };
+
+            // Validação da Especialidade
+            while (true)
+            {
+                Console.Write("Digite a especialidade do médico: ");
+                especialidade = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(especialidade) || !especialidadesValidas.Contains(especialidade))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Especialidade inválida. Insira uma especialidade válida.");
+                    Console.ResetColor();
+                    continue;
+                }
+                break;
+            }
+
             Medico novoMedico = new Medico(proximoIdMedico++, nome, especialidade);
             medicos.Add(novoMedico);
             SalvarMedicos();
             Console.WriteLine("Médico adicionado com sucesso!");
         }
+
 
         static void ListarMedicos()
         {
