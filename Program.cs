@@ -124,7 +124,7 @@ namespace GerenciamentoHospital
                         AdicionarPaciente();
                         break;
                     case 2:
-                        ListarPacientes();
+                        ListarPacientes(); // Chamada sem o parâmetro
                         break;
                     case 3:
                         AtualizarPaciente();
@@ -140,9 +140,37 @@ namespace GerenciamentoHospital
                         Console.ResetColor();
                         break;
                 }
-                Console.Write("\n");
-                Console.ReadKey();
             } while (opcao != 0);
+        }
+
+        static void ListarPacientes()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("╔══════════════════════════════════════════════╗");
+            Console.WriteLine("║               LISTA DE PACIENTES             ║");
+            Console.WriteLine("╚══════════════════════════════════════════════╝");
+            Console.WriteLine("");
+
+            if (pacientes.Count == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\nNenhum paciente cadastrado.");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                foreach (var paciente in pacientes)
+                {
+                    Console.WriteLine($"ID: {paciente.Id,-5} | Nome: {paciente.Nome,-30} | CPF: {paciente.Cpf}");
+                }
+            }
+
+            // Mensagem para continuar, sem duplicação
+            Console.WriteLine("\nPressione qualquer tecla para continuar...");
+            Console.ResetColor();
+            Console.ReadKey(); // Aguarda a entrada do usuário
         }
 
 
@@ -193,7 +221,7 @@ namespace GerenciamentoHospital
         }
 
 
-        static void ListarPacientes()
+        static void ListarPacientes(bool mostrarMensagem = true)
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Green;
@@ -216,32 +244,81 @@ namespace GerenciamentoHospital
                     Console.WriteLine($"ID: {paciente.Id,-5} | Nome: {paciente.Nome,-30} | CPF: {paciente.Cpf}");
                 }
             }
-            Console.WriteLine("\nPressione Qualquer Tecla Para voltar");
+
+            if (mostrarMensagem)
+            {
+                // Mensagem para voltar ao menu anterior
+                Console.WriteLine("\nPressione qualquer tecla para voltar...");
+                Console.ResetColor();
+                Console.ReadKey(); // Aguarda a entrada do usuário
+            }
         }
+
 
 
         static void AtualizarPaciente()
         {
-            ListarPacientes();
+            ListarPacientes(false); // Chama ListarPacientes sem a mensagem de retorno
             Console.WriteLine();
             Console.Write("Digite o ID do paciente a ser atualizado: ");
-            int id = int.Parse(Console.ReadLine());
+
+            int id;
+
+            // Validação do ID
+            while (!int.TryParse(Console.ReadLine(), out id) || !pacientes.Any(p => p.Id == id))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("ID inválido. Por favor, digite um ID válido.");
+                Console.ResetColor();
+                Console.Write("Digite o ID do paciente a ser atualizado: ");
+            }
+
             var paciente = pacientes.FirstOrDefault(p => p.Id == id);
 
             if (paciente != null)
             {
-                Console.Write("Novo nome: ");
-                paciente.Nome = Console.ReadLine();
-                Console.Write("Novo CPF: ");
-                paciente.Cpf = Console.ReadLine();
+                // Validação do Novo Nome
+                while (true)
+                {
+                    Console.Write("Novo nome: ");
+                    string novoNome = Console.ReadLine();
+                    if (string.IsNullOrWhiteSpace(novoNome) || !System.Text.RegularExpressions.Regex.IsMatch(novoNome, @"^[a-zA-Z\s]+$"))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Nome inválido. Apenas letras e espaços são permitidos.");
+                        Console.ResetColor();
+                        continue;
+                    }
+                    paciente.Nome = novoNome;
+                    break;
+                }
+
+                // Validação do Novo CPF
+                while (true)
+                {
+                    Console.Write("Novo CPF: ");
+                    string novoCpf = Console.ReadLine();
+                    if (novoCpf.Length != 11 || !novoCpf.All(char.IsDigit))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("CPF inválido. Deve ter exatamente 11 números.");
+                        Console.ResetColor();
+                        continue;
+                    }
+                    paciente.Cpf = novoCpf;
+                    break;
+                }
+
                 SalvarPacientes();
-                Console.WriteLine("Paciente atualizado com sucesso.");
+                Console.WriteLine("Paciente atualizado com sucesso!");
             }
             else
             {
                 Console.WriteLine("Paciente não encontrado.");
             }
         }
+
+
 
         static void RemoverPaciente()
         {
@@ -286,7 +363,8 @@ namespace GerenciamentoHospital
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Opção inválida. Por favor, insira um número.");
-                    Console.WriteLine("\nPressione qualquer tecla para continuar2...");
+                    Console.ResetColor();
+                    Console.WriteLine("\nPressione qualquer tecla para continuar...");
                     Console.ReadKey();
                     continue;
                 }
@@ -297,7 +375,7 @@ namespace GerenciamentoHospital
                         AdicionarMedico();
                         break;
                     case 2:
-                        ListarMedicos();
+                        ListarMedicos(); // Chamada sem o parâmetro
                         break;
                     case 3:
                         AtualizarMedico();
@@ -313,10 +391,9 @@ namespace GerenciamentoHospital
                         Console.ResetColor();
                         break;
                 }
-                Console.WriteLine("\nPressione qualquer tecla para continuar...");
-                Console.ReadKey();
             } while (opcao != 0);
         }
+
 
 
         static void AdicionarMedico()
@@ -463,13 +540,16 @@ namespace GerenciamentoHospital
         {
             Console.Clear();
             Console.WriteLine("==== Agendar Consulta ====");
-            ListarPacientes();
+
+            // Listar Pacientes sem a mensagem de retorno
+            ListarPacientes(false);
             Console.Write("Digite o ID do paciente: ");
             int idPaciente = int.Parse(Console.ReadLine());
             var paciente = pacientes.FirstOrDefault(p => p.Id == idPaciente);
 
             if (paciente != null)
             {
+                // Listar Médicos
                 ListarMedicos();
                 Console.Write("Digite o ID do médico: ");
                 int idMedico = int.Parse(Console.ReadLine());
@@ -480,6 +560,7 @@ namespace GerenciamentoHospital
                     Console.Write("Digite a data da consulta (dd/MM/yyyy): ");
                     DateTime dataConsulta = DateTime.Parse(Console.ReadLine());
 
+                    // Criar nova consulta
                     Consulta novaConsulta = new Consulta(proximoIdConsulta++, paciente, medico, dataConsulta);
                     consultas.Add(novaConsulta);
                     SalvarConsultas();
@@ -495,6 +576,7 @@ namespace GerenciamentoHospital
                 Console.WriteLine("Paciente não encontrado.");
             }
         }
+
 
         static void ListarConsultas()
         {
