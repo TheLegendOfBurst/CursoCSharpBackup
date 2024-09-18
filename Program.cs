@@ -157,7 +157,7 @@ namespace GerenciamentoHospital
             Console.WriteLine($"║ Data e Hora: {DateTime.Now:dd/MM/yyyy HH:mm}                                               ║");
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════╝");
-            
+
 
             if (pacientes.Count == 0)
             {
@@ -179,8 +179,6 @@ namespace GerenciamentoHospital
             Console.WriteLine("\nPressione qualquer tecla para continuar...");
             Console.ReadKey();
         }
-
-
 
         static void AdicionarPaciente()
         {
@@ -227,7 +225,6 @@ namespace GerenciamentoHospital
             Console.WriteLine();
             Console.WriteLine("Pressione Qualquer Tecla para continuar");
         }
-
 
         static void ListarPacientes(bool mostrarMensagem = true)
         {
@@ -363,7 +360,6 @@ namespace GerenciamentoHospital
             Console.ReadKey(); // Aguarda a entrada do usuário antes de voltar ao menu
         }
 
-
         // Métodos de gerenciamento de médicos
         static void MenuMedicos()
         {
@@ -418,8 +414,6 @@ namespace GerenciamentoHospital
                 }
             } while (opcao != 0);
         }
-
-
 
         static void AdicionarMedico()
         {
@@ -478,7 +472,6 @@ namespace GerenciamentoHospital
             Console.WriteLine("Médico adicionado com sucesso!");
         }
 
-
         static void ListarMedicos()
         {
             Console.Clear();
@@ -512,7 +505,6 @@ namespace GerenciamentoHospital
             Console.ReadKey();
         }
 
-
         static void ExibirMedico(Medico medico)
         {
             Console.WriteLine($"ID: {medico.Id,-5} | Nome: {medico.Nome,-30} | Especialidade: {medico.Especialidade}");
@@ -523,7 +515,6 @@ namespace GerenciamentoHospital
             Console.WriteLine("\nPressione Enter para voltar ao menu...");
             Console.ReadKey();
         }
-
 
         static void AtualizarMedico()
         {
@@ -608,14 +599,15 @@ namespace GerenciamentoHospital
             }
         }
 
-
         static void ListarConsultas()
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("╔══════════════════════════════════════════════╗");
-            Console.WriteLine("║               LISTA DE CONSULTAS             ║");
-            Console.WriteLine("╚══════════════════════════════════════════════╝");
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║                         LISTA DE CONSULTAS                                  ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════╝");
+            Console.WriteLine($"║ Data e Hora: {DateTime.Now:dd/MM/yyyy HH:mm}                                               ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════╝");
             Console.ResetColor();
 
             if (consultas.Count == 0)
@@ -627,10 +619,23 @@ namespace GerenciamentoHospital
             else
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
+
+                // Cabeçalhos da tabela
+                Console.WriteLine("╔═════╦══════════════════════╦═══════════════════════════════════╗");
+                Console.WriteLine("║ ID  ║ Paciente             ║ Médico                            ║");
+                Console.WriteLine("╠═════╬══════════════════════╬═══════════════════════════════════╣");
+
+                // Ajuste o tamanho do campo do nome do médico
                 foreach (var consulta in consultas)
                 {
-                    Console.WriteLine($"ID: {consulta.Id,-5} | Paciente: {consulta.Paciente.Nome,-30} | Médico: {consulta.Medico.Nome}");
+                    string nomePaciente = consulta.Paciente.Nome.Length > 20 ? consulta.Paciente.Nome.Substring(0, 20) : consulta.Paciente.Nome.PadRight(20);
+                    string nomeMedico = consulta.Medico.Nome.Length > 33 ? consulta.Medico.Nome.Substring(0, 33) : consulta.Medico.Nome.PadRight(33); // Ajuste para que o nome do médico tenha sempre 33 caracteres
+
+                    Console.WriteLine($"║ {consulta.Id,-3} ║ {nomePaciente} ║ {nomeMedico} ║");
                 }
+
+                // Linha de rodapé
+                Console.WriteLine("╚═════╩══════════════════════╩═══════════════════════════════════╝");
                 Console.ResetColor();
             }
 
