@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|c:\\users\\aluno noite\\documents\\cursoc#\\cursocsharpbackup\\exercicios\\backup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|solutionrelative:exercicios\\backup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|c:\\users\\aluno noite\\documents\\cursoc#\\cursocsharpbackup\\programconsultoriosmedicos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C7A483DE-3B65-488A-AAAF-1944AD06CCCF}|CursoCSharpBackup.csproj|solutionrelative:programconsultoriosmedicos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,20 +46,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "backup.cs",
+              "DocumentMoniker": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Exercicios\\backup.cs",
+              "RelativeDocumentMoniker": "Exercicios\\backup.cs",
+              "ToolTip": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Exercicios\\backup.cs",
+              "RelativeToolTip": "Exercicios\\backup.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAswIMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T20:42:15.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAFkCAAAAAAAAAAAAAHQCAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAswF8AAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-17T19:25:15.934Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ProgramConsultoriosMedicos.cs",
               "DocumentMoniker": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\ProgramConsultoriosMedicos.cs",
               "RelativeDocumentMoniker": "ProgramConsultoriosMedicos.cs",
@@ -63,12 +80,11 @@
               "RelativeToolTip": "ProgramConsultoriosMedicos.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-17T18:43:01.8Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-17T18:43:01.8Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "consultas.json",
               "DocumentMoniker": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Armazenamento Json\\consultas.json",
               "RelativeDocumentMoniker": "Armazenamento Json\\consultas.json",
@@ -80,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "medicos.json",
               "DocumentMoniker": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Armazenamento Json\\medicos.json",
               "RelativeDocumentMoniker": "Armazenamento Json\\medicos.json",
@@ -92,7 +108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "pacientes.json",
               "DocumentMoniker": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Armazenamento Json\\pacientes.json",
               "RelativeDocumentMoniker": "Armazenamento Json\\pacientes.json",
