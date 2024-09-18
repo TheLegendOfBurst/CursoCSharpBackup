@@ -48,7 +48,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Aluno Noite\\Documents\\CursoC#\\CursoCSharpBackup\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABABAAAAAAAAAAAxwN4BAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAIECAAAAAAAAAAAzwJcCAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-17T19:25:15.934Z",
               "EditorCaption": ""
@@ -63,8 +63,7 @@
               "RelativeToolTip": "ProgramConsultoriosMedicos.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAswBgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-17T18:43:01.8Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-17T18:43:01.8Z"
             },
             {
               "$type": "Document",
@@ -100,8 +99,7 @@
               "RelativeToolTip": "Armazenamento Json\\pacientes.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-17T19:39:47.488Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-17T19:39:47.488Z"
             }
           ]
         }
