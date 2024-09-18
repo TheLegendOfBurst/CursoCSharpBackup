@@ -43,6 +43,7 @@ namespace GerenciamentoHospital
                 Console.WriteLine("║  2. Gerenciar Médicos                                  ║");
                 Console.WriteLine("║  3. Agendar Consulta                                   ║");
                 Console.WriteLine("║  4. Listar Consultas                                   ║");
+                Console.WriteLine("║  5. Gerar Relatório                                    ║");
                 Console.WriteLine("║  0. Sair                                               ║");
                 Console.WriteLine("╚════════════════════════════════════════════════════════╝");
                 Console.WriteLine("");
@@ -70,6 +71,9 @@ namespace GerenciamentoHospital
                         break;
                     case 4:
                         ListarConsultas();
+                        break;
+                    case 5:
+                        GerarRelatorio();
                         break;
                     case 0:
                         SalvarDados();
@@ -146,32 +150,36 @@ namespace GerenciamentoHospital
         static void ListarPacientes()
         {
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("╔══════════════════════════════════════════════╗");
-            Console.WriteLine("║               LISTA DE PACIENTES             ║");
-            Console.WriteLine("╚══════════════════════════════════════════════╝");
-            Console.WriteLine("");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║                            LISTA DE PACIENTES                               ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════╝");
+            Console.WriteLine($"║ Data e Hora: {DateTime.Now:dd/MM/yyyy HH:mm}                                               ║");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════╝");
+            
 
             if (pacientes.Count == 0)
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("\nNenhum paciente cadastrado.");
-                Console.ResetColor();
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("╔═════╦══════════════════════╦══════════════╗");
+                Console.WriteLine("║ ID  ║ Nome                 ║ CPF          ║");
+                Console.WriteLine("╠═════╬══════════════════════╬══════════════╣");
+
                 foreach (var paciente in pacientes)
                 {
-                    Console.WriteLine($"ID: {paciente.Id,-5} | Nome: {paciente.Nome,-30} | CPF: {paciente.Cpf}");
+                    Console.WriteLine($"║ {paciente.Id,-3} ║ {paciente.Nome,-20} ║ {paciente.Cpf,-12} ║");
                 }
-            }
 
-            // Mensagem para continuar, sem duplicação
+                Console.WriteLine("╚═════╩══════════════════════╩══════════════╝");
+            }
             Console.WriteLine("\nPressione qualquer tecla para continuar...");
-            Console.ResetColor();
-            Console.ReadKey(); // Aguarda a entrada do usuário
+            Console.ReadKey();
         }
+
 
 
         static void AdicionarPaciente()
@@ -225,9 +233,11 @@ namespace GerenciamentoHospital
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("╔══════════════════════════════════════════════╗");
-            Console.WriteLine("║               LISTA DE PACIENTES             ║");
-            Console.WriteLine("╚══════════════════════════════════════════════╝");
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║                             LISTA DE PACIENTES                              ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════╝");
+            Console.WriteLine($"║ Data e Hora: {DateTime.Now:dd/MM/yyyy HH:mm}                                               ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════╝");
             Console.WriteLine("");
 
             if (pacientes.Count == 0)
@@ -239,22 +249,27 @@ namespace GerenciamentoHospital
             else
             {
                 Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("╔═════╦══════════════════════╦══════════════╗");
+                Console.WriteLine("║ ID  ║ Nome                 ║ CPF          ║");
+                Console.WriteLine("╠═════╬══════════════════════╬══════════════╣");
+
                 foreach (var paciente in pacientes)
                 {
-                    Console.WriteLine($"ID: {paciente.Id,-5} | Nome: {paciente.Nome,-30} | CPF: {paciente.Cpf}");
+                    Console.WriteLine($"║ {paciente.Id,-3} ║ {paciente.Nome,-20} ║ {paciente.Cpf,-12} ║");
                 }
+
+                Console.WriteLine("╚═════╩══════════════════════╩══════════════╝");
             }
+
+            Console.ResetColor();
 
             if (mostrarMensagem)
             {
                 // Mensagem para voltar ao menu anterior
                 Console.WriteLine("\nPressione qualquer tecla para voltar...");
-                Console.ResetColor();
                 Console.ReadKey(); // Aguarda a entrada do usuário
             }
         }
-
-
 
         static void AtualizarPaciente()
         {
@@ -318,26 +333,36 @@ namespace GerenciamentoHospital
             }
         }
 
-
-
         static void RemoverPaciente()
         {
-            ListarPacientes();
-            Console.Write("Digite o ID do paciente a ser removido: ");
-            int id = int.Parse(Console.ReadLine());
-            var paciente = pacientes.FirstOrDefault(p => p.Id == id);
+            Console.Clear();
+            ListarPacientes(false); // Lista pacientes sem mensagem de retorno
+            Console.Write("\nDigite o ID do paciente a ser removido: ");
 
-            if (paciente != null)
+            // Obtém o ID e procura o paciente
+            if (int.TryParse(Console.ReadLine(), out int id))
             {
-                pacientes.Remove(paciente);
-                SalvarPacientes();
-                Console.WriteLine("Paciente removido com sucesso.");
+                var paciente = pacientes.FirstOrDefault(p => p.Id == id);
+                if (paciente != null)
+                {
+                    pacientes.Remove(paciente);
+                    SalvarPacientes();
+                    Console.WriteLine("Paciente removido com sucesso.");
+                }
+                else
+                {
+                    Console.WriteLine("Paciente não encontrado.");
+                }
             }
             else
             {
-                Console.WriteLine("Paciente não encontrado.");
+                Console.WriteLine("ID inválido. Por favor, insira um número.");
             }
+
+            Console.WriteLine("Pressione qualquer tecla para continuar...");
+            Console.ReadKey(); // Aguarda a entrada do usuário antes de voltar ao menu
         }
+
 
         // Métodos de gerenciamento de médicos
         static void MenuMedicos()
@@ -457,30 +482,36 @@ namespace GerenciamentoHospital
         static void ListarMedicos()
         {
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine("╔══════════════════════════════════════════════╗");
-            Console.WriteLine("║               LISTA DE MÉDICOS               ║");
-            Console.WriteLine("╚══════════════════════════════════════════════╝");
-            Console.ResetColor();
-
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║                            LISTA DE MÉDICOS                                 ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════╝");
+            Console.WriteLine($"║ Data e Hora: {DateTime.Now:dd/MM/yyyy HH:mm}                                               ║");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════╝");
             if (medicos.Count == 0)
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("\nNenhum médico cadastrado.");
-                Console.ResetColor();
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("╔═════╦══════════════════════╦══════════════════╗");
+                Console.WriteLine("║ ID  ║ Nome                 ║ Especialidade    ║");
+                Console.WriteLine("╠═════╬══════════════════════╬══════════════════╣");
+
                 foreach (var medico in medicos)
                 {
-                    ExibirMedico(medico);
+                    Console.WriteLine($"║ {medico.Id,-3} ║ {medico.Nome,-20} ║ {medico.Especialidade,-16} ║");
                 }
-                Console.ResetColor();
+
+                Console.WriteLine("╚═════╩══════════════════════╩══════════════════╝");
             }
 
-            FinalizarListagem();
+            Console.ResetColor();
+            Console.WriteLine("\nPressione qualquer tecla para continuar...");
+            Console.ReadKey();
         }
+
 
         static void ExibirMedico(Medico medico)
         {
@@ -607,6 +638,63 @@ namespace GerenciamentoHospital
             Console.ReadKey();
         }
 
+        static void GerarRelatorio()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("                         ╔═══════════════════════════════════════════════════════╗");
+            Console.WriteLine("                         ║                   RELATÓRIO                        ║");
+            Console.WriteLine("                         ╚═══════════════════════════════════════════════════════╝");
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine($"| Data e Hora: {DateTime.Now:dd/MM/yyyy HH:mm}                                            |");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("╚═══════════════════════════════════════════════════════════════════════════════════════╝");
+
+            // Total de pacientes
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"Total de Pacientes: {pacientes.Count}");
+            Console.WriteLine($"Total de Médicos: {medicos.Count}");
+            Console.WriteLine($"Total de Consultas: {consultas.Count}");
+
+            // Listar pacientes
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\n╔═════════════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║                            LISTA DE PACIENTES                               ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════╝");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("╔═════╦══════════════════════╦══════════════╗");
+            Console.WriteLine("║ ID  ║ Nome                 ║ CPF          ║");
+            Console.WriteLine("╠═════╬══════════════════════╬══════════════╣");
+
+            foreach (var paciente in pacientes)
+            {
+                Console.WriteLine($"║ {paciente.Id,-3} ║ {paciente.Nome,-20} ║ {paciente.Cpf,-12} ║");
+            }
+
+            Console.WriteLine("╚═════╩══════════════════════╩══════════════╝");
+
+            // Listar médicos
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\n╔═════════════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║                            LISTA DE MÉDICOS                                 ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════╝");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("╔═════╦══════════════════════╦══════════════════╗");
+            Console.WriteLine("║ ID  ║ Nome                 ║ Especialidade    ║");
+            Console.WriteLine("╠═════╬══════════════════════╬══════════════════╣");
+
+            foreach (var medico in medicos)
+            {
+                Console.WriteLine($"║ {medico.Id,-3} ║ {medico.Nome,-20} ║ {medico.Especialidade,-16} ║");
+            }
+
+            Console.WriteLine("╚═════╩══════════════════════╩══════════════════╝");
+
+            Console.ResetColor();
+            Console.WriteLine("\nPressione qualquer tecla para voltar ao menu...");
+            Console.ReadKey();
+        }
 
         // Métodos de persistência de dados
         static void CarregarDados()
