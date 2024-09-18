@@ -45,7 +45,7 @@ namespace GerenciamentoHospital
                 Console.WriteLine("║  4. Listar Consultas                                   ║");
                 Console.WriteLine("║  0. Sair                                               ║");
                 Console.WriteLine("╚════════════════════════════════════════════════════════╝");
-                Console.ResetColor();
+                Console.WriteLine("");
                 Console.Write("Escolha uma opção: ");
 
                 if (!int.TryParse(Console.ReadLine(), out opcao))
@@ -105,7 +105,7 @@ namespace GerenciamentoHospital
                 Console.WriteLine("║  4. Remover Paciente                         ║");
                 Console.WriteLine("║  0. Voltar                                   ║");
                 Console.WriteLine("╚══════════════════════════════════════════════╝");
-                Console.ResetColor();
+                Console.WriteLine("");
                 Console.Write("Escolha uma opção: ");
 
                 if (!int.TryParse(Console.ReadLine(), out opcao))
@@ -140,7 +140,7 @@ namespace GerenciamentoHospital
                         Console.ResetColor();
                         break;
                 }
-                Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                Console.Write("\n");
                 Console.ReadKey();
             } while (opcao != 0);
         }
@@ -155,7 +155,10 @@ namespace GerenciamentoHospital
             Paciente novoPaciente = new Paciente(proximoIdPaciente++, nome, cpf);
             pacientes.Add(novoPaciente);
             SalvarPacientes();
+            Console.WriteLine();
             Console.WriteLine("Paciente adicionado com sucesso!");
+            Console.WriteLine();
+            Console.WriteLine("Pressione Qualquer Tecla para continuar");
         }
 
         static void ListarPacientes()
@@ -165,7 +168,7 @@ namespace GerenciamentoHospital
             Console.WriteLine("╔══════════════════════════════════════════════╗");
             Console.WriteLine("║               LISTA DE PACIENTES             ║");
             Console.WriteLine("╚══════════════════════════════════════════════╝");
-            Console.ResetColor();
+            Console.WriteLine("");
 
             if (pacientes.Count == 0)
             {
@@ -180,11 +183,8 @@ namespace GerenciamentoHospital
                 {
                     Console.WriteLine($"ID: {paciente.Id,-5} | Nome: {paciente.Nome,-30} | CPF: {paciente.Cpf}");
                 }
-                Console.ResetColor();
             }
-
-            Console.WriteLine("\nPressione Enter para Continuar....");
-            Console.ReadKey();
+            Console.WriteLine("\nPressione Qualquer Tecla Para voltar");
         }
 
 
@@ -247,15 +247,14 @@ namespace GerenciamentoHospital
                 Console.WriteLine("║  4. Remover Médico                           ║");
                 Console.WriteLine("║  0. Voltar                                   ║");
                 Console.WriteLine("╚══════════════════════════════════════════════╝");
-                Console.ResetColor();
+                Console.WriteLine("");
                 Console.Write("Escolha uma opção: ");
 
                 if (!int.TryParse(Console.ReadLine(), out opcao))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Opção inválida. Por favor, insira um número.");
-                    Console.ResetColor();
-                    Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                    Console.WriteLine("\nPressione qualquer tecla para continuar2...");
                     Console.ReadKey();
                     continue;
                 }
@@ -303,7 +302,7 @@ namespace GerenciamentoHospital
         static void ListarMedicos()
         {
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("╔══════════════════════════════════════════════╗");
             Console.WriteLine("║               LISTA DE MÉDICOS               ║");
             Console.WriteLine("╚══════════════════════════════════════════════╝");
@@ -317,7 +316,7 @@ namespace GerenciamentoHospital
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.ForegroundColor = ConsoleColor.DarkRed;
                 foreach (var medico in medicos)
                 {
                     ExibirMedico(medico);
@@ -424,7 +423,7 @@ namespace GerenciamentoHospital
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("╔══════════════════════════════════════════════╗");
-            Console.WriteLine("║               LISTA DE CONSULTAS              ║");
+            Console.WriteLine("║               LISTA DE CONSULTAS             ║");
             Console.WriteLine("╚══════════════════════════════════════════════╝");
             Console.ResetColor();
 
