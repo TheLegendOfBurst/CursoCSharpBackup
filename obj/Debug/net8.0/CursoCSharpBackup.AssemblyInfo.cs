@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CursoCSharpBackup")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d23d93ea7a787642cbed8b9cd3662128980f6b13")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3df76d348c955a9b3a75c94ce893d9535f420605")]
 [assembly: System.Reflection.AssemblyProductAttribute("CursoCSharpBackup")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CursoCSharpBackup")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
